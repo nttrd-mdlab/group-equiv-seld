@@ -1,8 +1,10 @@
 # Group Equivariant DNN for Ambisonic Signal Processing
 
+This repository is the demonstration of the group equivariant Ambisonic signal processing DNNs [1], implemented by the authors.
+
 ## License
 
-This repository (except submodules) is released under the specific license. Read [License](https://github.com/nttrd-mdlab/group-equiv-seld/blob/main/LICENSE) file in this repository before you download and use this software.
+This repository (except submodules) is released under the specific license. **Read [License](https://github.com/nttrd-mdlab/group-equiv-seld/blob/main/LICENSE) file in this repository before you download and use this software.**
 
 The submodule `seld-dcase2019` is under its own license.
 
@@ -42,7 +44,9 @@ The script `fCGModule.py` is from [zlin7/CGNet](https://github.com/zlin7/CGNet),
 └── seld-dcase2019
 ```
 
-## How to run
+## Usage
+
+We assume the environment that `docker/Dockerfile` appropriately works.
 
 1. Clone this repository.
 
@@ -81,7 +85,7 @@ Trained model is saved to `./checkpoints`, and the log is saved to `./result`.
 5. Change experiment conditions by rewriting `parameter.py` and re-run `./run_experiment.sh`:
    - Toggle `model=['Conventional', 'Proposed'][1]` to `[0]` to test baseline model.
    - Toggle `scale_equivariance=True` to `False` to disable scale equivariance of proposed method.
-   - Switch `train_rotation_bias=['virtual_rot', 'azi_random', None][0]` to `1` to enable rotational data augmentation.
+   - Switch `train_rotation_bias=['virtual_rot', 'azi_random', None][0]` to `[1]` to enable rotational data augmentation.
    - Rewrite `feature_phase_different_bin=0` to `None` to disable time translation invariance of proposed method.
 
 6. Check and compare performance.
@@ -113,3 +117,7 @@ $ exit
 ```sh
 $ ./run_adversarial_attack.sh 0 ./checkpoints/(name of checkpoint file).checkpoint (output file name)
 ```
+
+## References
+
+- [1] R. Sato, K. Niwa, K. Kobayashi, "Ambisonic Signal Processing DNNs Guaranteeing Rotation, Scale and Time Translation Equivariance," IEEE/ACM Trans. ASLP, (to be published), 2021.
