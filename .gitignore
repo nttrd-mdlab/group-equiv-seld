@@ -1,0 +1,13 @@
+_old_misc
+__pycache__
+.vscode
+*.egg
+*.egg-info
+*.log
+*.out
+checkpoint_*
+*.checkpoint
+events.out.tfevents.*
+*.png
+*.pdf
+*.pyc
